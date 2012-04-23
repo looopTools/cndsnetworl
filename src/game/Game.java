@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class game {
+public class Game {
 
 	/**
 	 * @param args
@@ -26,7 +26,7 @@ public class game {
 		
 		ScoreList s = new ScoreList(players);
 		s.setVisible(true);
-		gameplayer g = new gameplayer(me,s);
+		Gameplayer g = new Gameplayer(me,s);
 	}
 
 }
