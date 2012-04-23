@@ -71,7 +71,7 @@ public class Gameplayer {
 		ko = new KeyClass(this);
 		screen.addKeyListener(ko); 
 	}
-
+ 
 	
 
 
