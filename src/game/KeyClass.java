@@ -24,6 +24,9 @@ public class KeyClass implements KeyListener {
 		if (ke.getKeyCode() == ke.VK_RIGHT) {
 			g.PlayerMoved("right");
 		}
+		if (ke.getKeyCode() == ke.VK_ESCAPE){
+			
+		}
 	}
 
 	public void keyReleased(KeyEvent ke) {
