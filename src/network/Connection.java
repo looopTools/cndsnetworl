@@ -8,18 +8,16 @@ import java.net.Socket;
 
 public class Connection extends Thread {
 
-	private  BufferedReader inFromUser;
+	private BufferedReader inFromUser;
 	private Socket clientSocket;
 	private DataOutputStream outToServer;
 	private BufferedReader inFromServer;
 
 	public Connection() {
 		try{
-			inFromUser = new BufferedReader(
-					new InputStreamReader(System.in));
+			inFromUser = new BufferedReader(new InputStreamReader(System.in));
 			clientSocket = new Socket("127.0.0.1", 1337); //Cause we can 
-			outToServer = new DataOutputStream(
-					clientSocket.getOutputStream());
+			outToServer = new DataOutputStream(clientSocket.getOutputStream());
 			inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		}catch(Exception e){
 			e.printStackTrace();

@@ -1,5 +1,8 @@
 package network;
 
+import game.Game;
+import game.Player;
+
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -8,6 +11,7 @@ public class Server extends Thread{
 	
 	private ArrayList<TCPThread> threads;
 	private ServerSocket welcomeSocket;
+	private Game game = new Game();
 	
 	public Server(){
 		
@@ -19,13 +23,14 @@ public class Server extends Thread{
 			welcomeSocket = new ServerSocket(3000);
 			while(true){
 				Socket connectionSocket = welcomeSocket.accept();
-				TCPThread tserv = new TCPThread(connectionSocket);
+				// TODO : Fix player in TCPThread constructor.
+				TCPThread tserv = new TCPThread(new Player("Erling"), connectionSocket);
 				threads.add(tserv);
 				tserv.start();
 			}
 		}
 		catch (Exception e){
-			
+			e.printStackTrace();
 		}
 	}
 }
