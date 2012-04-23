@@ -7,19 +7,29 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Connection extends Thread {
-
+	
+	private  BufferedReader inFromUser;
+	private Socket clientSocket;
+	private DataOutputStream outToServer;
+	private BufferedReader inFromServer;
+	
 	public Connection() {
-
+		try{
+			inFromUser = new BufferedReader(
+					new InputStreamReader(System.in));
+			clientSocket = new Socket("127.0.0.1", 1337); //Cause we can 
+			outToServer = new DataOutputStream(
+					clientSocket.getOutputStream());
+			inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	public void run(){
 		try{
-			final BufferedReader inFromUser = new BufferedReader(
-					new InputStreamReader(System.in));
-			Socket clientSocket = new Socket("127.0.0.1", 1337); //Cause we can 
-			final DataOutputStream outToServer = new DataOutputStream(
-					clientSocket.getOutputStream());
-			BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			Thread readUserInput = new Thread(){
 				public void run(){
 					while(!interrupted()){
@@ -35,6 +45,19 @@ public class Connection extends Thread {
 					}
 				}
 			};
+			
+			readUserInput.start();
+			
+			while(true){
+				String in = inFromServer.readLine();
+				System.out.println(in);
+				
+				if(in == null){
+					System.out.println("Connection lost");
+					readUserInput.interrupt();
+					return;
+				}
+			}
 				
 		
 		}catch(Exception e){
