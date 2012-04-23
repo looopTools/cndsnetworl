@@ -11,10 +11,11 @@ public class Server extends Thread{
 	
 	private ArrayList<TCPThread> threads;
 	private ServerSocket welcomeSocket;
-	private Game game = new Game();
+	private Game game;
 	
 	public Server(){
-		
+		game = new Game();
+		game.start();
 	}
 	
 	public void run(){

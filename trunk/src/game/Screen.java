@@ -9,17 +9,16 @@ import javax.swing.JLabel;
 
 
 public class Screen  extends JFrame {
+	
 	private JLabel[][] labels = new JLabel[20][20];
-	
-	
-	
+
 	private String[][] level;
 
-	
-	public Screen(String[][] level,int posX,int posY) {
+
+	public Screen(String[][] level, int posX, int posY) {
 		super("TKgame v. 1.0");
 		this.level = level;
-	
+
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocation(100, 100);
 		this.setSize(500, 500);
@@ -30,9 +29,9 @@ public class Screen  extends JFrame {
 		this.repaint();
 		this.setVisible(true);
 	}
-	
-	public void movePlayerOnScreen(int oldX, int oldY, int x, int y,String playerDirection) {
-	
+
+	public void movePlayerOnScreen(int oldX, int oldY, int x, int y, String playerDirection) {
+
 		labels[oldX][oldY].setIcon(new ImageIcon("./Image/Gulv2.png"));
 
 
@@ -53,7 +52,8 @@ public class Screen  extends JFrame {
 					new ImageIcon("./Image/HeltNed.png"));
 		};
 
-}
+	}
+
 	public void draw(int posX,int posY) {
 		for (int j = 0; j < 20; j++) {
 			for (int i = 0; i < 20; i++) {
@@ -68,7 +68,7 @@ public class Screen  extends JFrame {
 					this.add(l);
 					labels[i][j] = l;
 				}
-				
+
 			}
 
 		}
