@@ -1,13 +1,5 @@
 package game;
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.Color;
-import java.awt.GridLayout;
-import javax.swing.*;
-
 import network.Message;
-
-import java.util.ArrayList;
 public class Gameplayer {
 	
 	// Players start values
@@ -74,12 +66,9 @@ public class Gameplayer {
 		ko = new KeyClass(this);
 		screen.addKeyListener(ko); 
 	}
- 
-	
-
 
 	public void PlayerMoved(String direction) {
-		me.direction = direction;
+		me.setDirection(direction);
 		int x = me.getXpos(),y = me.getYpos();
 		if (direction.equals("right")) {
 			x = me.getXpos() + 1;
@@ -105,7 +94,7 @@ public class Gameplayer {
 			me.setYpos(y);
 		}
 		
-		Message m = new Message(me.getXpos(), me.getYpos(), me.point);
+		Message m = new Message(me.getXpos(), me.getYpos(), me.getPoints());
 	
 	}
 }

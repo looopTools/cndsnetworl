@@ -1,62 +1,80 @@
 package game;
 
 public class Player {
-String name;
-int xpos;
-int ypos;
-int point;
-String direction;
+	private String name;
+	private int xpos;
+	private int ypos;
+	private int points;
 
-public Player (String name) {
-	this.name = name;
-	xpos = 9;
-	ypos = 7;
-	point = 0;
-	direction = "up";
-}
 
-public int getXpos() {
-	return xpos;
-}
+	private String direction;
 
-public void setXpos(int xpos) {
-	this.xpos = xpos;
-}
+	public Player (String name) {
+		this.name = name;
+		this.xpos = 9;
+		this.ypos = 7;
+		this.points = 0;
+		this.direction = "up";
+	}
 
-public int getYpos() {
-	return ypos;
-}
+	public int getXpos() {
+		return xpos;
+	}
 
-public void setYpos(int ypos) {
-	this.ypos = ypos;
-}
-public String getDirection() {
-	return direction;
-}
+	public void setXpos(int xpos) {
+		this.xpos = xpos;
+	}
 
-public void setDirection(String direction) {
-	this.direction = direction;
-}
+	public int getYpos() {
+		return ypos;
+	}
 
-public String ToString () {
-	return name + "   " + point;
-}
-public void addOnePoint() {
+	public void setYpos(int ypos) {
+		this.ypos = ypos;
+	}
+	public String getDirection() {
+		return direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
 	
-	point ++;
-}
+	public String getName() {
+		return name;
+	}
 
-public void subOnePoint() {
-	point --;
-}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-public void playerKilled(){
-	point += 50;
-}
+	public int getPoints() {
+		return points;
+	}
 
-public void killedByPlayer(){
-	point -= 50;
-}
+	public void setPoints(int points) {
+		this.points = points;
+	}
+
+	public String ToString () {
+		return name + "   " + points;
+	}
+	public void addOnePoint() {
+
+		points ++;
+	}
+
+	public void subOnePoint() {
+		points --;
+	}
+
+	public void playerKilled(){
+		points += 50;
+	}
+
+	public void killedByPlayer(){
+		points -= 50;
+	}
 
 }
 
