@@ -16,8 +16,7 @@ public class Screen  extends JFrame {
 	private String[][] level;
 
 	
-	public Screen(String[][] level,int posX,int posY)
-	{
+	public Screen(String[][] level,int posX,int posY) {
 		super("TKgame v. 1.0");
 		this.level = level;
 	
@@ -31,6 +30,7 @@ public class Screen  extends JFrame {
 		this.repaint();
 		this.setVisible(true);
 	}
+	
 	public void movePlayerOnScreen(int oldX, int oldY, int x, int y,String playerDirection) {
 	
 		labels[oldX][oldY].setIcon(new ImageIcon("./Image/Gulv2.png"));
