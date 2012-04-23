@@ -4,6 +4,9 @@ import java.awt.event.*;
 import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.*;
+
+import network.Message;
+
 import java.util.ArrayList;
 public class Gameplayer {
 	
@@ -101,6 +104,9 @@ public class Gameplayer {
 			me.setXpos(x);
 			me.setYpos(y);
 		}
+		
+		Message m = new Message(me.getXpos(), me.getYpos(), me.point);
+	
 	}
 }
 

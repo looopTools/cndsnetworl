@@ -6,9 +6,10 @@ public class Message {
 	
 	private int x, y, point;
 	
-	public Message(int x, int y){
+	public Message(int x, int y, int point){
 		this.x = x; 
 		this.y = y;
+		this.point = point;
 	}
 	
 	
