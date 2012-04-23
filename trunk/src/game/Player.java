@@ -38,16 +38,25 @@ public void setDirection(String direction) {
 	this.direction = direction;
 }
 
-String ToString () {
+public String ToString () {
 	return name + "   " + point;
 }
-void addOnePoint() {
+public void addOnePoint() {
 	
 	point ++;
 }
 
-void subOnePoint() {
+public void subOnePoint() {
 	point --;
 }
+
+public void playerKilled(){
+	point += 50;
+}
+
+public void killedByPlayer(){
+	point -= 50;
+}
+
 }
 
