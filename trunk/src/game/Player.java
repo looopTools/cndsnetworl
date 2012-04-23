@@ -1,6 +1,7 @@
 package game;
 
 public class Player {
+	
 	private String name;
 	private int xpos;
 	private int ypos;

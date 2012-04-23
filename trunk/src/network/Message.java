@@ -5,8 +5,10 @@ public class Message {
 //	int oldX, int oldY, int x, int y,String playerDirection
 	
 	private int x, y, point;
+	private String direction;
 	
-	public Message(int x, int y, int point){
+	public Message(String direction, int x, int y, int point){
+		this.direction = direction;
 		this.x = x; 
 		this.y = y;
 		this.point = point;

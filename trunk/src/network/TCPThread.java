@@ -1,17 +1,22 @@
 package network;
 
+import game.Player;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.Socket;
-import java.util.List;
 
 public class TCPThread extends Thread{
 	
-	private String playerName;
+	private Player player;
 	private Socket connectionSocket;
 	private DataOutputStream dos;
 	
-	public TCPThread(Socket connectionSocket){
+	public TCPThread(Player player, Socket connectionSocket){
+		
+		this.player = player;
+		
 		try {
 			this.connectionSocket = connectionSocket;
 			dos = new DataOutputStream(connectionSocket.getOutputStream());
@@ -26,7 +31,12 @@ public class TCPThread extends Thread{
 	public void run(){
 		try{
 			while(true){
+				ObjectInputStream input = new ObjectInputStream(connectionSocket.getInputStream());
+				Message m = (Message) input.readObject();
 				
+				if(m != null) {
+					
+				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();

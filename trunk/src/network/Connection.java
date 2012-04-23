@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class Connection extends Thread {
-	
+
 	private  BufferedReader inFromUser;
 	private Socket clientSocket;
 	private DataOutputStream outToServer;
 	private BufferedReader inFromServer;
-	
+
 	public Connection() {
 		try{
 			inFromUser = new BufferedReader(
@@ -24,8 +24,8 @@ public class Connection extends Thread {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		
-		
+
+
 	}
 
 	public void run(){
@@ -41,25 +41,25 @@ public class Connection extends Thread {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						} 
-						
+
 					}
 				}
 			};
-			
+
 			readUserInput.start();
-			
+
 			while(true){
 				String in = inFromServer.readLine();
 				System.out.println(in);
-				
+
 				if(in == null){
 					System.out.println("Connection lost");
 					readUserInput.interrupt();
 					return;
 				}
 			}
-				
-		
+
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}
