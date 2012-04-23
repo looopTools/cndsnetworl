@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.*;
 import java.util.ArrayList;
-public class gameplayer {
+public class Gameplayer {
 	
 	// Players start values
 	//private String playerDirection = "up";
@@ -62,7 +62,7 @@ public class gameplayer {
 	// level is defined column by column
 	Screen screen; 
 
-	public gameplayer(Player me, ScoreList s) {
+	public Gameplayer(Player me, ScoreList s) {
 	
 		this.me = me;
 		this.slist = s;
