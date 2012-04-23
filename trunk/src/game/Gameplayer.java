@@ -1,4 +1,6 @@
 package game;
+import java.util.Random;
+
 import network.Message;
 public class Gameplayer {
 	
@@ -78,5 +80,27 @@ public class Gameplayer {
 		Message m = new Message(direction, me.getXpos(), me.getYpos(), me.getPoints());
 	
 	}
+	
+	
+	//We have add following
+	public int[] spawn(){
+		int[] coordinats = new int[2];
+		Random r = new Random();
+		
+		int x = r.nextInt(20);
+		int y = r.nextInt(20);
+		
+		if((!level[x][y].equals("w"))){
+			coordinats[0] = x;
+			coordinats[1] = y;
+		}
+		else{
+			spawn();
+		}
+		return coordinats;
+	}
+	
+	
+	
 }
 

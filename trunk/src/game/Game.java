@@ -13,6 +13,7 @@ public class Game extends Thread {
 	 */
 	public ArrayList<Player> players = new ArrayList<Player>();
 	public Player me;
+	public Gameplayer g;
 
 	public void run() {
 
@@ -28,12 +29,16 @@ public class Game extends Thread {
 
 			ScoreList s = new ScoreList(players);
 			s.setVisible(true);
-			Gameplayer g = new Gameplayer(me,s);
+			g = new Gameplayer(me,s);
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public Gameplayer getGamePlayer(){
+		return this.g;
 	}
 
 }

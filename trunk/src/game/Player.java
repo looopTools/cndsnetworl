@@ -1,5 +1,7 @@
 package game;
 
+import network.Server;
+
 public class Player {
 	
 	private String name;
@@ -12,8 +14,9 @@ public class Player {
 
 	public Player (String name) {
 		this.name = name;
-		this.xpos = 9;
-		this.ypos = 7;
+		int[] coordinates = Server.getGame().getGamePlayer().spawn();
+		this.xpos = coordinates[0];
+		this.ypos = coordinates[1];
 		this.points = 0;
 		this.direction = "up";
 	}
@@ -76,5 +79,7 @@ public class Player {
 	public void killedByPlayer(){
 		points -= 50;
 	}
+	
+	//TODO: Respawn;
 
 }

@@ -11,11 +11,12 @@ public class Server extends Thread{
 	
 	private ArrayList<TCPThread> threads;
 	private ServerSocket welcomeSocket;
-	private Game game;
+	private static Game game;
 	
 	public Server(){
 		game = new Game();
 		game.start();
+		
 	}
 	
 	public void run(){
@@ -33,5 +34,9 @@ public class Server extends Thread{
 		catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public static Game getGame(){
+		return game;
 	}
 }
