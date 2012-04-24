@@ -22,14 +22,20 @@ public class Game extends Thread {
 		String in;
 		try {
 			in = b.readLine();
-
+			
 			me = new Player(in);
+//			me.setGame(this);
 			players.add(me);
-			// players.add(new Player("FUP"));
-
 			ScoreList s = new ScoreList(players);
 			s.setVisible(true);
 			g = new Gameplayer(me,s);
+
+			
+			
+			
+			// players.add(new Player("FUP"));
+
+			
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
