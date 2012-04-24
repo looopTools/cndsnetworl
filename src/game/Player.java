@@ -10,13 +10,14 @@ public class Player {
 	private int xpos;
 	private int ypos;
 	private int points;
+	private Game game = null;
 
 
 	private String direction;
 
 	public Player (String name) {
 		this.name = name;
-		this.generateXAndY();
+//		this.generateXAndY();
 //		int[] coordinates = Server.getGame().getGamePlayer().spawn();
 //		this.xpos = coordinates[0];
 //		this.ypos = coordinates[1];
@@ -84,11 +85,27 @@ public class Player {
 	}
 	
 	
-	public void generateXAndY(){
-		Random r = new Random();
-		this.setXpos(r.nextInt(20));
-		this.setYpos(r.nextInt(20));
-	}
+//	public void generateXAndY(){
+//		Random r = new Random();
+//		
+//		String[][] temp = game.getGamePlayer().getLevel();
+//		
+//		this.setXpos(r.nextInt(20));
+//		this.setYpos(r.nextInt(20));
+//		
+//		while(temp[xpos][ypos].equals("w")){
+//			this.setXpos(r.nextInt(20));
+//			this.setYpos(r.nextInt(20));
+//		}
+//	}
 	//TODO: Respawn;
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
 
 }

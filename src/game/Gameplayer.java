@@ -40,6 +40,10 @@ public class Gameplayer {
 	// level is defined column by column
 	Screen screen; 
 
+	public String[][] getLevel(){
+		return level;
+	}
+	
 	public Gameplayer(Player me, ScoreList s) {
 	
 		this.me = me;
