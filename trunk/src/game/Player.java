@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 import network.Server;
 
 public class Player {
@@ -14,9 +16,10 @@ public class Player {
 
 	public Player (String name) {
 		this.name = name;
-		int[] coordinates = Server.getGame().getGamePlayer().spawn();
-		this.xpos = coordinates[0];
-		this.ypos = coordinates[1];
+		this.generateXAndY();
+//		int[] coordinates = Server.getGame().getGamePlayer().spawn();
+//		this.xpos = coordinates[0];
+//		this.ypos = coordinates[1];
 		this.points = 0;
 		this.direction = "up";
 	}
@@ -80,6 +83,12 @@ public class Player {
 		points -= 50;
 	}
 	
+	
+	public void generateXAndY(){
+		Random r = new Random();
+		this.setXpos(r.nextInt(20));
+		this.setYpos(r.nextInt(20));
+	}
 	//TODO: Respawn;
 
 }
