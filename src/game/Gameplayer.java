@@ -1,7 +1,7 @@
 package game;
 import java.util.Random;
 
-import network.Message;
+
 public class Gameplayer {
 	
 	// Players start values
@@ -80,8 +80,6 @@ public class Gameplayer {
 			me.setXpos(x);
 			me.setYpos(y);
 		}
-		
-		Message m = new Message(direction, me.getXpos(), me.getYpos(), me.getPoints());
 	
 	}
 	
@@ -104,6 +102,9 @@ public class Gameplayer {
 		return coordinats;
 	}
 	
+	public Screen getScreen(){
+		return this.screen;
+	}
 	
 	
 }
