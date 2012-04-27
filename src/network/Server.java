@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Server extends Thread{
 	
-	private ArrayList<TCPThread> threads;
+	private ArrayList<TCPPlayer> threads;
 	private ServerSocket welcomeSocket;
 	private static Game game;
 	
@@ -26,7 +26,7 @@ public class Server extends Thread{
 			while(true){
 				Socket connectionSocket = welcomeSocket.accept();
 				// TODO : Fix player in TCPThread constructor.
-				TCPThread tserv = new TCPThread(new Player("Erling"), connectionSocket);
+				TCPPlayer tserv = new TCPPlayer(new Player("Erling"), connectionSocket);
 				threads.add(tserv);
 				tserv.start();
 			}

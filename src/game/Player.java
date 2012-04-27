@@ -21,6 +21,7 @@ public class Player {
 //		int[] coordinates = Server.getGame().getGamePlayer().spawn();
 //		this.xpos = coordinates[0];
 //		this.ypos = coordinates[1];
+		xpos = ypos = 1;
 		this.points = 0;
 		this.direction = "up";
 	}
@@ -84,20 +85,20 @@ public class Player {
 		points -= 50;
 	}
 	
-	
-//	public void generateXAndY(){
-//		Random r = new Random();
-//		
-//		String[][] temp = game.getGamePlayer().getLevel();
-//		
-//		this.setXpos(r.nextInt(20));
-//		this.setYpos(r.nextInt(20));
-//		
-//		while(temp[xpos][ypos].equals("w")){
-//			this.setXpos(r.nextInt(20));
-//			this.setYpos(r.nextInt(20));
-//		}
-//	}
+
+	public void generateXAndY(){
+		Random r = new Random();
+		
+		String[][] temp = game.getGamePlayer().getLevel();
+		
+		this.setXpos(r.nextInt(20));
+		this.setYpos(r.nextInt(20));
+		
+		while(temp[xpos][ypos].equals("w")){
+			this.setXpos(r.nextInt(20));
+			this.setYpos(r.nextInt(20));
+		}
+	}
 	//TODO: Respawn;
 
 	public Game getGame() {

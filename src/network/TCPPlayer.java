@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-public class TCPThread extends Thread{
+public class TCPPlayer extends Thread{
 	
 	private Player player;
 	private Socket connectionSocket;
 	private DataOutputStream dos;
 	
-	public TCPThread(Player player, Socket connectionSocket){
+	public TCPPlayer(Player player, Socket connectionSocket){
 		
 		this.player = player;
 		
