@@ -1,8 +1,8 @@
 package game;
 
+import java.io.IOException;
 import java.util.Random;
 
-import network.Server;
 
 public class Player {
 	
@@ -108,5 +108,8 @@ public class Player {
 	public void setGame(Game game) {
 		this.game = game;
 	}
+	
+	
+	
 
 }

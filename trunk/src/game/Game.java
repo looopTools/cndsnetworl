@@ -46,5 +46,7 @@ public class Game extends Thread {
 	public Gameplayer getGamePlayer(){
 		return this.g;
 	}
+	
+	
 
 }
