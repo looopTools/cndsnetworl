@@ -1,12 +1,13 @@
 package network;
 
-import game.Game;
+import game.test.Game;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class Server {
@@ -16,9 +17,9 @@ public class Server {
 	private ServerSocket server;
 	private String[][] level;
 	
-	public Server(){
+	public Server() throws UnknownHostException, IOException{
 		game = new Game();
-		level = game.getGamePlayer().getLevel();
+		//level = game.getGamePlayer().getLevel();
 		players = new ArrayList<Player>();
 	}
 	
@@ -205,7 +206,7 @@ public class Server {
 		}
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws UnknownHostException, IOException{
 		new Server();
 	}
 	
