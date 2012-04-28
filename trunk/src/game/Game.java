@@ -3,6 +3,9 @@ package game;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.util.ArrayList;
 
 public class Game extends Thread {
@@ -11,10 +14,22 @@ public class Game extends Thread {
 	 * @param args
 	 *
 	 */
-	public ArrayList<Player> players = new ArrayList<Player>();
-	public Player me;
-	public Gameplayer g;
-
+	
+	private Player me;
+	private Gameplayer g;
+	private ArrayList<Player> players = new ArrayList<Player>();
+	
+	
+	//Our adds
+	private Socket socket;
+	private ObjectOutputStream out;
+	private ObjectInputStream in;
+	
+	//
+	public Game(){
+		
+		
+	}
 	public void run() {
 
 		System.out.println("Indtast dit spillernavn");
@@ -43,8 +58,17 @@ public class Game extends Thread {
 		}
 	}
 	
+	//---our changes--
+	
+	public void setUpPlayer(){
+		
+	}
 	public Gameplayer getGamePlayer(){
 		return this.g;
+	}
+	
+	public void setPlayers(ArrayList<Player> players){
+		this.players = players;
 	}
 	
 	
