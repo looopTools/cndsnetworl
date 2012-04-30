@@ -117,7 +117,6 @@ public class Server {
 						if (level[xPos][yPos].equals("w")) {
 							score = score - 2;
 							yPos++;
-//							update[6] = yPos;
 						} else {
 							checkCollision(update);
 						}
