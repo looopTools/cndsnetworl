@@ -189,10 +189,10 @@ public class Server {
 	}
 
 	public void waitForClients() throws IOException {
-		int port = 6855;
+		int port = 1337;
 		server = new ServerSocket(port);
 		while (true) {
-			System.out.println("Venter spændt på forbindelse..");
+			System.out.println("Waiting for new beavers to the nest..");
 			Socket acceptSocket = server.accept();
 			if (player1 == null) {
 				player1 = new Player(acceptSocket, 1, 1, 1);
@@ -207,7 +207,7 @@ public class Server {
 				player4 = new Player(acceptSocket, 1, 5, 4);
 				player4.start();	
 			}
-			System.out.println("Forbindelse opnået fra " + acceptSocket.getRemoteSocketAddress());
+			System.out.println("Connection from Beaver " + acceptSocket.getRemoteSocketAddress());
 			server.accept();
 		}
 

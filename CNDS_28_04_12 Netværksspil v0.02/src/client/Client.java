@@ -45,7 +45,7 @@ public class Client extends JFrame {
 	private JLabel p1Score, p2Score, p3Score, p4Score;
 
 	public Client() throws UnknownHostException, IOException {
-		super("The Game v0.02");
+		super("Le Beaver game");
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocation(100, 0);
 		this.setSize(500, 500);
@@ -74,7 +74,7 @@ public class Client extends JFrame {
 		public void run() {
 			Socket socket;
 			try {
-				socket = new Socket("localhost", 6855);
+				socket = new Socket("localhost", 1337);
 				while (true) {
 					int[] update = (int[]) in.readObject();
 					performUpdate(update);
